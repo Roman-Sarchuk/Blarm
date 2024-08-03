@@ -56,7 +56,26 @@ namespace BlarmWF
 
         private void UpdateConfigFile()
         {
+            try
+            {
+                data = parser.ReadFile(configFileName);
 
+                data["ChargeLevels"]["HighCharge"] = chargeOption1.NumericValue.ToString();
+                data["ChargeLevels"]["LowCharge"] = chargeOption2.NumericValue.ToString();
+                data["ChargeLevels"]["CriticalCharge"] = chargeOption3.NumericValue.ToString();
+
+                data["ChargeStatus"]["HighStatus"] = chargeOption1.PanelColorStatus.ToString();
+                data["ChargeStatus"]["LowStatus"] = chargeOption2.PanelColorStatus.ToString();
+                data["ChargeStatus"]["CriticalStatus"] = chargeOption3.PanelColorStatus.ToString();
+
+                parser.WriteFile("config.ini", data);
+
+                MessageBox.Show("Values are updated successfully", "Updating config data", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Updating config data", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void buttonReset_Click(object sender, EventArgs e)
@@ -71,11 +90,12 @@ namespace BlarmWF
             chargeOption2.PanelColorStatus = ColorStatusName.On;
             chargeOption3.PanelColorStatus = ColorStatusName.On;
 
+            UpdateConfigFile();
         }
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
-
+            UpdateConfigFile();
         }
     }
 }
