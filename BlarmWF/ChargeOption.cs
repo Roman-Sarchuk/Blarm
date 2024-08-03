@@ -49,8 +49,8 @@ namespace BlarmWF
             get { return btnColorStatus; }
             set { 
                 btnColorStatus = value;
-                buttonStatus.BackColor = StatusColor.GetColor(value);
-                labelStatus.Text = StatusColor.GetText(value);
+                buttonStatus.BackColor = StatusColor.GetColor(btnColorStatus);
+                labelStatus.Text = StatusColor.GetText(btnColorStatus);
             }
         }
 
