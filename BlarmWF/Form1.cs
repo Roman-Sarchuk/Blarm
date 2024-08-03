@@ -60,10 +60,12 @@ namespace BlarmWF
             {
                 data = parser.ReadFile(configFileName);
 
+                // set Charge levels
                 data["ChargeLevels"]["HighCharge"] = chargeOption1.NumericValue.ToString();
                 data["ChargeLevels"]["LowCharge"] = chargeOption2.NumericValue.ToString();
                 data["ChargeLevels"]["CriticalCharge"] = chargeOption3.NumericValue.ToString();
 
+                // set Status
                 data["ChargeStatus"]["HighStatus"] = chargeOption1.PanelColorStatus.ToString();
                 data["ChargeStatus"]["LowStatus"] = chargeOption2.PanelColorStatus.ToString();
                 data["ChargeStatus"]["CriticalStatus"] = chargeOption3.PanelColorStatus.ToString();
