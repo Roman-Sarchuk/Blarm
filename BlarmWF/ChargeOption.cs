@@ -1,27 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Drawing.Text;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using WMPLib;
 
 
 namespace BlarmWF
 {
      public partial class ChargeOption : UserControl
     {
-        private PrivateFontCollection pfc = new PrivateFontCollection();
+        // --- values ---
+        private static string soundDirectoryName = "Sounds\\";
         private ColorStatusName btnColorStatus = ColorStatusName.On;
+        private WindowsMediaPlayer player = new WindowsMediaPlayer();
 
+
+        // ***** properties for VS *****
         [Category("Appearance")]
         public string Title
         {
-            get { return labelTitle.Text; }
-            set { labelTitle.Text = value; }
+            get { return labelCharge.Text; }
+            set { labelCharge.Text = value; }
         }
 
         [Category("Behavior")]
@@ -53,6 +53,14 @@ namespace BlarmWF
                 labelStatus.Text = StatusColor.GetText(btnColorStatus);
             }
         }
+        // ***** ********** *** ** *****
+
+        // ***** sound properties *****
+        public string SoundName { get { return comboBoxSound.SelectedItem?.ToString() ?? "None"; } }
+        public string SoundPath { get { return soundDirectoryName + SoundName; } }
+        public int SoundSelectedIndex { get { return comboBoxSound.SelectedIndex; } set { comboBoxSound.SelectedIndex = value; } }
+        // ***** ***** ********** *****
+
 
         public ChargeOption()
         {
@@ -62,7 +70,58 @@ namespace BlarmWF
             labelStatus.Text = StatusColor.GetText(ColorStatusName.On);
         }
 
-        private void ChangeButton()
+
+        public void SetTitleFont(Font font)
+        {
+            labelCharge.Font = font;
+            labelSound.Font = font;
+        }
+
+        public void UpdateSoundCB(List<string> items)
+        {
+            var selectedItem = comboBoxSound.SelectedItem;
+
+            comboBoxSound.Items.Clear();
+            comboBoxSound.Items.AddRange(items.ToArray());
+
+            if (selectedItem == null)   // guard: item isn't selected
+                return;
+
+            if (comboBoxSound.Items.Contains(selectedItem))
+                comboBoxSound.SelectedItem = selectedItem;
+            else
+                comboBoxSound.Text = string.Empty;
+
+        }
+
+        private void PlaySound()
+        {
+            // guard system
+            if (SoundName == "None")    // item isn't selected
+                return;
+            if (!System.IO.File.Exists(SoundPath))     // file doesn't exist
+            {
+                MessageBox.Show($"Can't find the \"{SoundName}\" in '{soundDirectoryName}' folder", "Getting sound file", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (player.playState == WMPPlayState.wmppsPlaying)     // sound's playing now
+                return;
+
+            // execute
+            try
+            {
+                player.URL = SoundPath;
+                player.controls.play();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error playing sound:\n" + ex.Message, "Play sound file", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+        // ***** bined func *****
+        private void buttonStatus_Click(object sender, EventArgs e)
         {
             // Change color
             if (btnColorStatus == ColorStatusName.On)
@@ -85,10 +144,11 @@ namespace BlarmWF
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonPlay_Click(object sender, EventArgs e)
         {
-            ChangeButton();
+            PlaySound();
         }
+        // ***** ***** **** *****
     }
 
 }
