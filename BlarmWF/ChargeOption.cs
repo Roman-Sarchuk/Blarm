@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 using WMPLib;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 
 namespace BlarmWF
@@ -56,9 +57,25 @@ namespace BlarmWF
         // ***** ********** *** ** *****
 
         // ***** sound properties *****
-        public string SoundName { get { return comboBoxSound.SelectedItem?.ToString() ?? "None"; } }
+        public string SoundName { 
+            get { return comboBoxSound.SelectedItem?.ToString() ?? "None"; }
+            set 
+            {
+                // observer: such string value is in CB
+                if (comboBoxSound.Items.Contains(value))
+                {
+                    comboBoxSound.SelectedItem = value;
+                }
+            } }
         public string SoundPath { get { return soundDirectoryName + SoundName; } }
-        public int SoundSelectedIndex { get { return comboBoxSound.SelectedIndex; } set { comboBoxSound.SelectedIndex = value; } }
+        public int SoundSelectedIndex { 
+            get { return comboBoxSound.SelectedIndex; } 
+            set 
+            {
+                if (comboBoxSound.Items.Count <= 0)
+                    return;
+                comboBoxSound.SelectedIndex = value; 
+            } }
         // ***** ***** ********** *****
 
 

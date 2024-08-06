@@ -80,15 +80,17 @@ namespace BlarmWF
                 chargeOption2.PanelColorStatus = (ColorStatusName)Enum.Parse(typeof(ColorStatusName), data["ChargeStatus"]["LowStatus"] ?? throw new ArgumentNullException("\nCan't find: section \"ChargeStatus\" -> property \"LowStatus\" in \"" + configFileName + "\""));
                 chargeOption3.PanelColorStatus = (ColorStatusName)Enum.Parse(typeof(ColorStatusName), data["ChargeStatus"]["CriticalStatus"] ?? throw new ArgumentNullException("vCan't find: section \"ChargeStatus\" -> property \"CriticalStatus\" in \"" + configFileName + "\""));
 
-
+                // get Sounds
+                UpdateSoundCB();
+                chargeOption1.SoundName = data["SoundOptions"]["HighSoundFileName"] ?? throw new ArgumentNullException("\nCan't find: section \"SoundOptions\" -> property \"HighSoundFileName\" in \"" + configFileName + "\"");
+                chargeOption2.SoundName = data["SoundOptions"]["LowSoundFileName"] ?? throw new ArgumentNullException("\nCan't find: section \"SoundOptions\" -> property \"LowSoundFileName\" in \"" + configFileName + "\"");
+                chargeOption3.SoundName = data["SoundOptions"]["CriticalSoundFileName"] ?? throw new ArgumentNullException("\nCan't find: section \"SoundOptions\" -> property \"CriticalSoundFileName\" in \"" + configFileName + "\"");
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Getting config data", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.Close();
             }
-
-            updateChargeOptionCB();
         }
         // ***** **** **** *****
 
@@ -108,6 +110,11 @@ namespace BlarmWF
                 data["ChargeStatus"]["HighStatus"] = chargeOption1.PanelColorStatus.ToString();
                 data["ChargeStatus"]["LowStatus"] = chargeOption2.PanelColorStatus.ToString();
                 data["ChargeStatus"]["CriticalStatus"] = chargeOption3.PanelColorStatus.ToString();
+
+                // set Sounds
+                data["SoundOptions"]["HighSoundFileName"] = chargeOption1.SoundName;
+                data["SoundOptions"]["LowSoundFileName"] = chargeOption2.SoundName;
+                data["SoundOptions"]["CriticalSoundFileName"] = chargeOption3.SoundName;
 
                 parser.WriteFile("config.ini", data);
 
@@ -151,7 +158,7 @@ namespace BlarmWF
             }
         }
 
-        private void updateChargeOptionCB()
+        private void UpdateSoundCB()
         {
             GetWavFiles();
 
@@ -165,6 +172,9 @@ namespace BlarmWF
         // ***** bined func *****
         private void buttonReset_Click(object sender, EventArgs e)
         {
+            // fuse: update
+            UpdateSoundCB();
+
             // NumericValue
             chargeOption1.NumericValue = defLevelList[0];
             chargeOption2.NumericValue = defLevelList[1];
@@ -176,20 +186,23 @@ namespace BlarmWF
             chargeOption3.PanelColorStatus = ColorStatusName.On;
 
             // Sound CBs
-            
+            chargeOption1.SoundSelectedIndex = 0;
+            chargeOption2.SoundSelectedIndex = 0;
+            chargeOption3.SoundSelectedIndex = 0;
 
+            // save data
             UpdateConfigFile();
         }
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
-            updateChargeOptionCB();
+            UpdateSoundCB();
             UpdateConfigFile();
         }
 
         private void buttonUpdate_Click(object sender, EventArgs e)
         {
-            updateChargeOptionCB();
+            UpdateSoundCB();
         }
 
         private void buttonAddSound_Click(object sender, EventArgs e)
@@ -218,7 +231,7 @@ namespace BlarmWF
                     // copy the file
                     File.Copy(selectedFilePath, destinationPath, false); // true - rewrite file if it exists
 
-                    updateChargeOptionCB();
+                    UpdateSoundCB();
 
                     MessageBox.Show($"File '{fileName}' has been copied to the 'Sounds' folder.", "Add sound", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -236,7 +249,7 @@ namespace BlarmWF
             delSoundForm.SetSoundCB(soundNameList);
             delSoundForm.ShowDialog();
 
-            updateChargeOptionCB();
+            UpdateSoundCB();
         }
         // ***** ***** **** *****
     }
