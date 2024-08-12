@@ -31,10 +31,7 @@ namespace BlarmWF
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.buttonPlay = new System.Windows.Forms.Button();
-            this.comboBoxSound = new System.Windows.Forms.ComboBox();
-            this.labelSound = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelPercent = new System.Windows.Forms.Label();
             this.labelStatus = new System.Windows.Forms.Label();
             this.buttonStatus = new System.Windows.Forms.Button();
             this.labelCharge = new System.Windows.Forms.Label();
@@ -48,10 +45,7 @@ namespace BlarmWF
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Controls.Add(this.buttonPlay);
-            this.panel1.Controls.Add(this.comboBoxSound);
-            this.panel1.Controls.Add(this.labelSound);
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.labelPercent);
             this.panel1.Controls.Add(this.labelStatus);
             this.panel1.Controls.Add(this.buttonStatus);
             this.panel1.Controls.Add(this.labelCharge);
@@ -61,47 +55,15 @@ namespace BlarmWF
             this.panel1.Size = new System.Drawing.Size(477, 96);
             this.panel1.TabIndex = 7;
             // 
-            // buttonPlay
+            // labelPercent
             // 
-            this.buttonPlay.Location = new System.Drawing.Point(332, 13);
-            this.buttonPlay.Name = "buttonPlay";
-            this.buttonPlay.Size = new System.Drawing.Size(29, 23);
-            this.buttonPlay.TabIndex = 11;
-            this.buttonPlay.Text = "▶";
-            this.buttonPlay.UseVisualStyleBackColor = true;
-            this.buttonPlay.Click += new System.EventHandler(this.buttonPlay_Click);
-            // 
-            // comboBoxSound
-            // 
-            this.comboBoxSound.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.comboBoxSound.FormattingEnabled = true;
-            this.comboBoxSound.Location = new System.Drawing.Point(239, 54);
-            this.comboBoxSound.Name = "comboBoxSound";
-            this.comboBoxSound.Size = new System.Drawing.Size(221, 28);
-            this.comboBoxSound.TabIndex = 10;
-            // 
-            // labelSound
-            // 
-            this.labelSound.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelSound.AutoSize = true;
-            this.labelSound.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.labelSound.Location = new System.Drawing.Point(233, 7);
-            this.labelSound.Name = "labelSound";
-            this.labelSound.Size = new System.Drawing.Size(92, 31);
-            this.labelSound.TabIndex = 9;
-            this.labelSound.Text = "Sound";
-            this.labelSound.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(124, 67);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(19, 16);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "%";
+            this.labelPercent.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.labelPercent.AutoSize = true;
+            this.labelPercent.Location = new System.Drawing.Point(124, 67);
+            this.labelPercent.Name = "labelPercent";
+            this.labelPercent.Size = new System.Drawing.Size(19, 16);
+            this.labelPercent.TabIndex = 8;
+            this.labelPercent.Text = "%";
             // 
             // labelStatus
             // 
@@ -173,9 +135,6 @@ namespace BlarmWF
         private System.Windows.Forms.Button buttonStatus;
         private System.Windows.Forms.Label labelCharge;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBoxSound;
-        private System.Windows.Forms.Label labelSound;
-        private Button buttonPlay;
+        private System.Windows.Forms.Label labelPercent;
     }
 }

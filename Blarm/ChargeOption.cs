@@ -12,19 +12,15 @@ namespace BlarmWF
      public partial class ChargeOption : UserControl
     {
         // --- values ---
-        private static string soundDirectoryName = "Sounds\\";
-        private ColorStatusName btnColorStatus = ColorStatusName.On;
-        private WindowsMediaPlayer player = new WindowsMediaPlayer();
+        private StatusName btnColorStatus = StatusName.On;
 
-
-        // ***** properties for VS *****
+        // *** interface properties ***
         [Category("Appearance")]
         public string Title
         {
             get { return labelCharge.Text; }
             set { labelCharge.Text = value; }
         }
-
         [Category("Behavior")]
         public int NumericValue
         {
@@ -45,7 +41,7 @@ namespace BlarmWF
         }
         [Category("Appearance")]
         [TypeConverter(typeof(ColorTypeConverter))]
-        public ColorStatusName PanelColorStatus
+        public StatusName PanelColorStatus
         {
             get { return btnColorStatus; }
             set { 
@@ -54,37 +50,15 @@ namespace BlarmWF
                 labelStatus.Text = StatusColor.GetText(btnColorStatus);
             }
         }
-        // ***** ********** *** ** *****
-
-        // ***** sound properties *****
-        public string SoundName { 
-            get { return comboBoxSound.SelectedItem?.ToString() ?? "None"; }
-            set 
-            {
-                // observer: such string value is in CB
-                if (comboBoxSound.Items.Contains(value))
-                {
-                    comboBoxSound.SelectedItem = value;
-                }
-            } }
-        public string SoundPath { get { return soundDirectoryName + SoundName; } }
-        public int SoundSelectedIndex { 
-            get { return comboBoxSound.SelectedIndex; } 
-            set 
-            {
-                if (comboBoxSound.Items.Count <= 0)
-                    return;
-                comboBoxSound.SelectedIndex = value; 
-            } }
-        // ***** ***** ********** *****
+        // *** ********* ********** ***
 
 
         public ChargeOption()
         {
             InitializeComponent();
-            btnColorStatus = ColorStatusName.On;
-            buttonStatus.BackColor = StatusColor.GetColor(ColorStatusName.On);
-            labelStatus.Text = StatusColor.GetText(ColorStatusName.On);
+            btnColorStatus = StatusName.On;
+            buttonStatus.BackColor = StatusColor.GetColor(StatusName.On);
+            labelStatus.Text = StatusColor.GetText(StatusName.On);
         }
 
 
@@ -140,30 +114,9 @@ namespace BlarmWF
         // ***** bined func *****
         private void buttonStatus_Click(object sender, EventArgs e)
         {
-            // Change color
-            if (btnColorStatus == ColorStatusName.On)
-            {
-                btnColorStatus = ColorStatusName.Mute;
-                buttonStatus.BackColor = StatusColor.GetColor(ColorStatusName.Mute);
-                labelStatus.Text = StatusColor.GetText(ColorStatusName.Mute);
-            }
-            else if (btnColorStatus == ColorStatusName.Mute)
-            {
-                btnColorStatus = ColorStatusName.Off;
-                buttonStatus.BackColor = StatusColor.GetColor(ColorStatusName.Off);
-                labelStatus.Text = StatusColor.GetText(ColorStatusName.Off);
-            }
-            else if (btnColorStatus == ColorStatusName.Off)
-            {
-                btnColorStatus = ColorStatusName.On;
-                buttonStatus.BackColor = StatusColor.GetColor(ColorStatusName.On);
-                labelStatus.Text = StatusColor.GetText(ColorStatusName.On);
-            }
-        }
-
-        private void buttonPlay_Click(object sender, EventArgs e)
-        {
-            PlaySound();
+            btnColorStatus = (btnColorStatus == StatusName.On) ? StatusName.Off : StatusName.On;
+            buttonStatus.BackColor = StatusColor.GetColor(btnColorStatus);
+            labelStatus.Text = StatusColor.GetText(btnColorStatus);
         }
         // ***** ***** **** *****
     }
