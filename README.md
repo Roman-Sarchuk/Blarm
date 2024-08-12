@@ -1,4 +1,16 @@
-# Blarm
+# [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=40&duration=1&pause=1000&vCenter=true&repeat=false&width=50&lines=%F0%9F%94%94)](https://git.io/typing-svg) [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=40&pause=1000&vCenter=true&random=true&width=435&lines=Blarm)](https://git.io/typing-svg)
+> [!NOTE]
+> It's a notifier that helps you monitor the battery level.
+> 
+> PS: your battery says thank you 😄
+
+
+> ### 🦾 Ability
+> - [x] edit the charge levels
+> - [x] turn on/off one of notifications
+> - [x] edit the update interval
+> - [x] switch the app active status
+> - [x] add to autostart
 
 # Using system tray:
 ![image](https://github.com/user-attachments/assets/225a3ce8-04f4-4afe-a47f-e16d15e3de62)
