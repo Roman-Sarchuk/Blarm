@@ -104,14 +104,14 @@ namespace BlarmWF
             this.openToolStripMenuItem,
             this.closeToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(211, 136);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(140, 108);
             // 
             // autostartToolStripMenuItem
             // 
             this.autostartToolStripMenuItem.Checked = true;
             this.autostartToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.autostartToolStripMenuItem.Name = "autostartToolStripMenuItem";
-            this.autostartToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
+            this.autostartToolStripMenuItem.Size = new System.Drawing.Size(139, 26);
             this.autostartToolStripMenuItem.Text = "Autostart";
             this.autostartToolStripMenuItem.Click += new System.EventHandler(this.autostartToolStripMenuItem_Click);
             // 
@@ -120,21 +120,21 @@ namespace BlarmWF
             this.activeToolStripMenuItem.Checked = true;
             this.activeToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.activeToolStripMenuItem.Name = "activeToolStripMenuItem";
-            this.activeToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
+            this.activeToolStripMenuItem.Size = new System.Drawing.Size(139, 26);
             this.activeToolStripMenuItem.Text = "Active";
             this.activeToolStripMenuItem.Click += new System.EventHandler(this.activeToolStripMenuItem_Click);
             // 
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(139, 26);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
             // closeToolStripMenuItem
             // 
             this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(139, 26);
             this.closeToolStripMenuItem.Text = "Close";
             this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
             // 
