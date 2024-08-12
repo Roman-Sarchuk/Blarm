@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.labelPercent = new System.Windows.Forms.Label();
             this.labelStatus = new System.Windows.Forms.Label();
             this.buttonStatus = new System.Windows.Forms.Button();
             this.labelTitle = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
@@ -43,7 +43,7 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.labelPercent);
             this.panel1.Controls.Add(this.labelStatus);
             this.panel1.Controls.Add(this.buttonStatus);
             this.panel1.Controls.Add(this.labelTitle);
@@ -52,6 +52,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(241, 96);
             this.panel1.TabIndex = 7;
+            // 
+            // labelPercent
+            // 
+            this.labelPercent.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.labelPercent.AutoSize = true;
+            this.labelPercent.Location = new System.Drawing.Point(124, 67);
+            this.labelPercent.Name = "labelPercent";
+            this.labelPercent.Size = new System.Drawing.Size(19, 16);
+            this.labelPercent.TabIndex = 8;
+            this.labelPercent.Text = "%";
             // 
             // labelStatus
             // 
@@ -103,16 +113,6 @@
             0,
             0});
             // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(124, 67);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(19, 16);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "%";
-            // 
             // ChargeOption
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -133,6 +133,6 @@
         private System.Windows.Forms.Button buttonStatus;
         public System.Windows.Forms.Label labelTitle;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelPercent;
     }
 }

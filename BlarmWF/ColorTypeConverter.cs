@@ -13,11 +13,11 @@ public class ColorTypeConverter : TypeConverter
     public override StandardValuesCollection GetStandardValues(ITypeDescriptorContext context)
     {
         // Повертає список доступних кольорів
-        return new StandardValuesCollection(new List<BlarmWF.ColorStatusName>
+        return new StandardValuesCollection(new List<BlarmWF.StatusName>
         {
-            BlarmWF.ColorStatusName.On,
-            BlarmWF.ColorStatusName.Mute,
-            BlarmWF.ColorStatusName.Off
+            BlarmWF.StatusName.On,
+            BlarmWF.StatusName.Mute,
+            BlarmWF.StatusName.Off
         });
     }
 

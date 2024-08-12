@@ -14,16 +14,16 @@ namespace BlarmWF
 {
      public partial class ChargeOption : UserControl
     {
-        private PrivateFontCollection pfc = new PrivateFontCollection();
-        private ColorStatusName btnColorStatus = ColorStatusName.On;
+        // --- values ---
+        private StatusName btnColorStatus = StatusName.On;
 
+        // *** interface properties ***
         [Category("Appearance")]
         public string Title
         {
             get { return labelTitle.Text; }
             set { labelTitle.Text = value; }
         }
-
         [Category("Behavior")]
         public int NumericValue
         {
@@ -44,7 +44,7 @@ namespace BlarmWF
         }
         [Category("Appearance")]
         [TypeConverter(typeof(ColorTypeConverter))]
-        public ColorStatusName PanelColorStatus
+        public StatusName PanelColorStatus
         {
             get { return btnColorStatus; }
             set { 
@@ -53,42 +53,31 @@ namespace BlarmWF
                 labelStatus.Text = StatusColor.GetText(btnColorStatus);
             }
         }
+        // *** ********* ********** ***
+
 
         public ChargeOption()
         {
             InitializeComponent();
-            btnColorStatus = ColorStatusName.On;
-            buttonStatus.BackColor = StatusColor.GetColor(ColorStatusName.On);
-            labelStatus.Text = StatusColor.GetText(ColorStatusName.On);
+            btnColorStatus = StatusName.On;
+            buttonStatus.BackColor = StatusColor.GetColor(StatusName.On);
+            labelStatus.Text = StatusColor.GetText(StatusName.On);
         }
 
         private void ChangeButton()
         {
-            // Change color
-            if (btnColorStatus == ColorStatusName.On)
-            {
-                btnColorStatus = ColorStatusName.Mute;
-                buttonStatus.BackColor = StatusColor.GetColor(ColorStatusName.Mute);
-                labelStatus.Text = StatusColor.GetText(ColorStatusName.Mute);
-            }
-            else if (btnColorStatus == ColorStatusName.Mute)
-            {
-                btnColorStatus = ColorStatusName.Off;
-                buttonStatus.BackColor = StatusColor.GetColor(ColorStatusName.Off);
-                labelStatus.Text = StatusColor.GetText(ColorStatusName.Off);
-            }
-            else if (btnColorStatus == ColorStatusName.Off)
-            {
-                btnColorStatus = ColorStatusName.On;
-                buttonStatus.BackColor = StatusColor.GetColor(ColorStatusName.On);
-                labelStatus.Text = StatusColor.GetText(ColorStatusName.On);
-            }
+            btnColorStatus = (btnColorStatus == StatusName.On) ? StatusName.Off : StatusName.On;
+            buttonStatus.BackColor = StatusColor.GetColor(btnColorStatus);
+            labelStatus.Text = StatusColor.GetText(btnColorStatus);
         }
 
+
+        // ***** Bined func *****
         private void button1_Click(object sender, EventArgs e)
         {
             ChangeButton();
         }
+        // ***** ***** **** *****
     }
 
 }

@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace BlarmWF
@@ -14,6 +12,13 @@ namespace BlarmWF
         [STAThread]
         static void Main()
         {
+            Mutex mutex = new Mutex(true, "BlarmAppMutexIsRun", out bool isNewInstance);
+
+            if (!isNewInstance)
+            {
+                return;
+            }
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
