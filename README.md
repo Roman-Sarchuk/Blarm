@@ -4,7 +4,6 @@
 > 
 > PS: your battery says thank you 😄
 
-
 > ### 🦾 Ability
 > - [x] edit the charge levels
 > - [x] turn on/off one of notifications
@@ -12,13 +11,27 @@
 > - [x] switch the app active status
 > - [x] add to autostart
 
-# Using system tray:
+> [!TIP]
+> #### You can change an emoji in the charge level notifications:
+> * open config.ini
+> * change the emoji in the 'Notification' section
+
+> [!WARNING]
+> For convenience, you can add the program to autostart
+> 
+> (link add to the Windows 'Autostart' folder)
+> 
+> but when you want to move or delet the app folder, it is recommended
+>
+> frirstly delete app from autorun (uncheck flag by 'Autostart' button)
+
+### Using system tray:
 ![image](https://github.com/user-attachments/assets/225a3ce8-04f4-4afe-a47f-e16d15e3de62)
 
-# Notification:
+### Notification:
 ![blarm_notify_1](https://github.com/user-attachments/assets/86850369-d88f-4acc-93b0-b82d716f8d58)
 ![blarm_notify_2](https://github.com/user-attachments/assets/5dfe087a-5042-4aaa-a5bf-1dc60eece154)
 ![blarm_notify_3](https://github.com/user-attachments/assets/1a8c676b-d4ec-41d1-8e40-1e56e20eb174)
 
-# Interface:
+### Interface:
 ![image](https://github.com/user-attachments/assets/72c03aab-a135-4ae1-9e79-2cb1a910db14)
