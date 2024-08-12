@@ -15,18 +15,18 @@
 
 
 > [!TIP]
-> #### You can change an emoji in the charge level notifications:
+> #### You can change (manually) an emoji in the charge level notifications:
 > * open config.ini
 > * change the emoji in the 'Notification' section
+> 
+> ![image](https://github.com/user-attachments/assets/17e12a67-9a67-45bb-a676-8712ab51bea2)
+
 
 
 > [!WARNING]
-> For convenience, you can add the program to autostart
-> 
-> (link add to the Windows 'Autostart' folder)
-> 
-> but when you want to move or delet the app folder, it is recommended
->
+> For convenience, you can add the program to autostart \
+> (link add to the Windows 'Autostart' folder) \
+> but when you want to move or delet the app folder, it is recommended \
 > frirstly delete app from autorun (uncheck flag by 'Autostart' button)
 
 
