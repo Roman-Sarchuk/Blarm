@@ -4,7 +4,7 @@
 
 # About Autostart ability:
 * for convenience, you can add the program to autostart (link add to the Windows 'Autostart' folder)
-* but when you want to move or delet the app folder, it is recommended frirstly delete app from autorun (uncheck flag by 'Autorun' button)
+* but when you want to move or delet the app folder, it is recommended frirstly delete app from autorun (uncheck flag by 'Autostart' button)
 
 # If you want to change an emoji in the charge level notifications
 * open config.ini
