@@ -1,17 +1,17 @@
 # [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=40&duration=1&pause=1000&vCenter=true&repeat=false&width=50&lines=%F0%9F%94%94)](https://git.io/typing-svg) [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=40&pause=1000&vCenter=true&random=true&width=435&lines=Blarm)](https://git.io/typing-svg)
 
 > [!NOTE]
-> It's a notifier that helps you monitor the battery level.
+> This lightweight tray notifier is designed to help you efficiently monitor and manage your device's battery level. It runs seamlessly in the background, providing real-time updates on your battery status directly from the system tray. With customizable settings, you can easily adjust the app’s behavior and notifications to suit your needs, ensuring you’re always informed about your battery level without interrupting your workflow.
 > 
 > PS: your battery says thank you 😄
 
 
 > ### 🦾 Ability
-> - [x] edit the charge levels
-> - [x] turn on/off one of notifications
-> - [x] edit the update interval
-> - [x] switch the app active status
-> - [x] add to autostart
+> - [x] Customize charge level thresholds
+> - [x] Enable/Disable notifications
+> - [x] Adjust the update interval
+> - [x] Activate/Deactivate the app
+> - [x] Add to autostart
 
 
 > [!TIP]
