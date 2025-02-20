@@ -1,7 +1,7 @@
 # [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=40&duration=1&pause=1000&vCenter=true&repeat=false&width=50&lines=%F0%9F%94%94)](https://git.io/typing-svg) [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=40&pause=1000&vCenter=true&random=true&width=435&lines=Blarm)](https://git.io/typing-svg)
 
 > [!NOTE]
-> This lightweight tray notifier is designed to help you efficiently monitor and manage your device's battery level. It runs seamlessly in the background, providing real-time updates on your battery status directly from the system tray. With customizable settings, you can easily adjust the app’s behavior and notifications to suit your needs, ensuring you’re always informed about your battery level without interrupting your workflow.
+> This lightweight and no-frills tray notifier is designed to help you efficiently monitor your device's battery level. It runs seamlessly in the background, providing real-time updates on your battery status directly from the system tray. With customizable settings, you can easily adjust the app’s behavior and notifications to suit your needs, ensuring you’re always informed about your battery level without interrupting your workflow.
 > 
 > PS: your battery says thank you 😄
 
